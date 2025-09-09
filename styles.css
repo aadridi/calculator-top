@@ -1,7 +1,10 @@
+* {
+	box-sizing: border-box;
+}
+
 body {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
 	font-family: 'Roboto', 'Arial', 'sans-serif';
 	text-align: center;
 }
@@ -53,7 +56,6 @@ h1 {
 
 .keys-bottom {
 	display: flex;
-	flex-direction: columns;
 	flex-wrap: wrap;
 	width: 210px;
 	gap: 3px;
@@ -64,8 +66,14 @@ button {
 	height: 50px;
 	border-radius: 5px;
 	font-size: 1.25rem;
+	text-align: center;
 }
 
 .operator {
 	background-color: yellow;
+}
+
+#eraser {
+	font-weight: bold;
+	font-style: italic;
 }

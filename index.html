@@ -10,33 +10,34 @@
 	<body>
 		<h1>Welcome to my Personal Calculator!</h1>
 		<p>This is my humble contribution for the CALCULATOR TOP Project!</p>
+		<p>NB: The <span id="eraser">"C"</span> button allows you to "backspace"/erase while <span id="eraser">"AC"</span> clears everything.</p>
 		<p><a href="https://www.theodinproject.com/">The Odin Project</a></p>
 		<div class="container">
 			<div class="display">
-				<input type="text" readonly />
+				<input type="text" readonly id="display" />
 			</div>
 			<div class="keys">
 				<div class="keys-top">
-					<button type="button">AC</button>
+					<button type="button" class="buttonAC">AC</button>
 					<button type="button" class="operator" value="÷">÷</button>
 				</div>
 				<div class="keys-bottom">
-					<button type="button" value="7">7</button>
-					<button type="button" value="8">8</button>
-					<button type="button" value="9">9</button>
+					<button type="button" value="7" class="digits">7</button>
+					<button type="button" value="8" class="digits">8</button>
+					<button type="button" value="9" class="digits">9</button>
 					<button type="button" class="operator" value="*">x</button>
-					<button type="button" value="4">4</button>
-					<button type="button" value="5">5</button>
-					<button type="button" value="6">6</button>
+					<button type="button" value="4" class="digits">4</button>
+					<button type="button" value="5" class="digits">5</button>
+					<button type="button" value="6" class="digits">6</button>
 					<button type="button" class="operator" value="-">-</button>
-					<button type="button" value="1">1</button>
-					<button type="button" value="2">2</button>
-					<button type="button" value="3">3</button>
-					<button type="button" class="operator">+</button>
-					<button type="button" value="0">0</button>
-					<button type="button" value=".">.</button>
-					<button type="button" class="operator" value="">?</button>
-					<button type="button" class="operator" value="=">=</button>
+					<button type="button" value="1" class="digits">1</button>
+					<button type="button" value="2" class="digits">2</button>
+					<button type="button" value="3" class="digits">3</button>
+					<button type="button" class="operator" value="+">+</button>
+					<button type="button" value="0" class="digits">0</button>
+					<button type="button" value="." class="digits">.</button>
+					<button type="button" class="operator" class="buttonClear">C</button>
+					<button type="button" class="operator" value="=" class="digits">=</button>
 				</div>
 			</div>
 		</div>

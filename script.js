@@ -6,7 +6,7 @@ const add = function (a, b) {
 };
 
 // Soustraction
-const substract = function (a, b) {
+const subtract = function (a, b) {
 	return a - b;
 };
 
@@ -25,17 +25,15 @@ const operate = function (operator, number1, number2) {
 	switch (operator) {
 		case '+':
 			return add(number1, number2);
-			break;
 		case '-':
-			return substract(number1, number2);
-			break;
+			return subtract(number1, number2);
 		case '*':
 			return multiply(number1, number2);
-			break;
 		case '÷':
 			return divide(number1, number2);
-			break;
 		default:
-			console.log('Unknown operator');
+			throw new Error('Unknown operation.');
 	}
 };
+
+// 3. Programming basic interactions
