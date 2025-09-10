@@ -30,7 +30,11 @@ const operate = function (operator, number1, number2) {
 		case '*':
 			return multiply(number1, number2);
 		case '÷':
-			return divide(number1, number2);
+			if (number2 === 0) {
+				return (displayEle.value = "Can't divide by 0!");
+			} else {
+				return divide(number1, number2);
+			}
 		default:
 			throw new Error('Unknown operation.');
 	}
@@ -76,6 +80,10 @@ equalOperator.addEventListener('click', (e) => {
 // EventListeners for class ".buttonAC"
 const buttonAC = document.querySelector('.buttonAC');
 buttonAC.addEventListener('click', (e) => {
+	firstNumber = null;
+	secondNumber = null;
+	currentOperator = null;
+
 	displayEle.value = '';
 	console.log('Erase everything!');
 });
@@ -83,5 +91,3 @@ buttonAC.addEventListener('click', (e) => {
 // EventListeners for class ".buttonClear"
 const buttonClear = document.querySelector('.buttonClear');
 buttonClear.addEventListener('click', (e) => console.log('Erase last input!'));
-
-
