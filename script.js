@@ -63,10 +63,16 @@ digits.forEach((button) => button.addEventListener('click', (e) => display(e.tar
 const operators = document.querySelectorAll('.operator');
 operators.forEach((button) =>
 	button.addEventListener('click', (e) => {
-		firstNumber = displayEle.value;
-		currentOperator = e.target.value;
-		displayEle.value = '';
-		console.log(firstNumber, currentOperator);
+		if (displayEle.value === '' && firstNumber !== null) {
+			currentOperator = e.target.value;
+		} else if (displayEle.value === '' && firstNumber === null) {
+			displayEle.value = 'Please enter a number first!';
+		} else {
+			firstNumber = displayEle.value;
+			currentOperator = e.target.value;
+			displayEle.value = '';
+			console.log(firstNumber, currentOperator);
+		}
 	})
 );
 
@@ -74,7 +80,7 @@ operators.forEach((button) =>
 const equalOperator = document.querySelector('.equal-operator');
 equalOperator.addEventListener('click', (e) => {
 	secondNumber = displayEle.value;
-	displayEle.value = operate(currentOperator, parseInt(firstNumber), parseInt(secondNumber));
+	displayEle.value = parseFloat(operate(currentOperator, parseFloat(firstNumber), parseFloat(secondNumber)).toFixed(15));
 });
 
 // EventListeners for class ".buttonAC"
@@ -90,4 +96,12 @@ buttonAC.addEventListener('click', (e) => {
 
 // EventListeners for class ".buttonClear"
 const buttonClear = document.querySelector('.buttonClear');
-buttonClear.addEventListener('click', (e) => console.log('Erase last input!'));
+buttonClear.addEventListener('click', () => (displayEle.value = displayEle.value.slice(0, -1)));
+
+// EventListeners for disabling "." if display already includes "."
+const decimal = document.querySelector('.decimal-point');
+decimal.addEventListener('click', (e) => {
+	if (!displayEle.value.includes('.')) {
+		display('.');
+	}
+});
